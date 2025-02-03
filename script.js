@@ -27,12 +27,14 @@ function addTask() {
 
 function renderTask(taskObj) {
     let li = document.createElement("li");
-    li.innerHTML = `<button class="check-btn ${taskObj.completed ? 'completed' : ''}" onclick="toggleComplete(this)">&#10003;</button> 
-                    <div class="task-details">
-                        <span>${taskObj.text}</span>
-                        ${taskObj.deadline ? `<span class="deadline-text">${taskObj.deadline}</span>` : ""}
-                    </div>
-                    <button class="delete-btn" onclick="deleteTask(this)">X</button>`;
+    li.innerHTML = `
+        <button class="check-btn ${taskObj.completed ? 'completed' : ''}" onclick="toggleComplete(this)">✔</button> 
+        <div class="task-details">
+            <span>${taskObj.text}</span>
+            ${taskObj.deadline ? `<span class="deadline-text">${taskObj.deadline}</span>` : ""}
+        </div>
+        <button class="delete-btn" onclick="deleteTask(this)">X</button>
+    `;
     document.getElementById("taskList").appendChild(li);
 }
 
