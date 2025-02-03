@@ -1,64 +1,174 @@
-/* General Styles */
-body {
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-    backdrop-filter: blur(3px);
+}
+
+/* Animated Background */
+body {
+    background: linear-gradient(-45deg, #e3f2fd, #bbdefb, #90caf9, #64b5f6);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
-    padding: 20px;
-}
-
-/* Overlay for Light Effect */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Soft light effect */
-    z-index: -1;
-}
-
-/* Main Container */
-.container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 450px;
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Box */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Motivational Image */
+.container::before {
+    content: "";
+    background: url('https://source.unsplash.com/400x200/?success,motivation,work') no-repeat center center/cover;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    border-radius: 12px 12px 0 0;
 }
 
 /* Heading */
 h2 {
-    font-size: 1.5em;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 600;
     color: #007bff;
-    margin-bottom: 15px;
+    margin-top: 70px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Input Section */
-.input-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-html, body {
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+/* Input Area */
+input, .deadline {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
-input, .deadline {
-    width: 100%;
-    padding:
+/* Add Task Button */
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Task Details */
+.task-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Deadline Text */
+.deadline-text {
+    font-size: 0.8em;
+    color: red;
+    font-weight: 600;
+}
+
+/* Check & Delete Buttons */
+.check-btn, .delete-btn {
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Check Button */
+.check-btn {
+    background: white;
+    border: 2px solid #28a745;
+    color: #28a745;
+}
+
+.check-btn.completed {
+    background: #28a745;
+    color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    body {
+        padding: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+}
