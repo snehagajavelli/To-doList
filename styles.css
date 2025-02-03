@@ -20,6 +20,7 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
+    background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
 }
 
 /* Background Animation */
