@@ -1,77 +1,142 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: #e3f2fd;
+    font-family: 'Poppins', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?nature,success,motivation') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
+
+/* Main Container */
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px;
-}
-h2 {
+    max-width: 450px;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
+
+/* Heading */
+h2 {
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 input, .deadline {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    margin-bottom: 5px;
-}
-button {
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Button */
+button {
+    padding: 12px;
     background: #007bff;
     color: white;
-    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Task List */
 ul {
     list-style: none;
     padding: 0;
+    margin-top: 15px;
 }
+
 li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    flex-wrap: wrap;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
 }
+
+li:hover {
+    transform: translateX(5px);
+}
+
+/* Task Details */
 .task-details {
     display: flex;
     flex-direction: column;
 }
+
+/* Deadline Text */
 .deadline-text {
     font-size: 0.8em;
     color: red;
 }
-.delete-btn {
-    background: red;
-    border: none;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
+/* Check Button */
 .check-btn {
     background: white;
-    border: 1px solid #28a745;
-    padding: 5px 10px;
+    border: 2px solid #28a745;
+    padding: 8px;
     color: #28a745;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    margin-right: 10px;
+    transition: 0.3s;
 }
+
 .check-btn.completed {
     background: #28a745;
     color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: red;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
