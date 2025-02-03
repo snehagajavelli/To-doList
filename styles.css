@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('https://source.unsplash.com/1600x900/?nature,success,motivation,sky') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
     backdrop-filter: blur(3px);
     display: flex;
     justify-content: center;
